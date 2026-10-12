@@ -1,0 +1,9 @@
+services:
+  frontend:
+    container_name: claude-command
+    image: fubooki/command-claude:frontend
+    restart: unless-stopped
+    ports:
+      - ${FRONTEND_PORT}:${FRONTEND_PORT}
+    environment:
+      - "FRONTEND_PORT=${FRONTEND_PORT}"
